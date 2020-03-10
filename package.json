@@ -12,7 +12,8 @@
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.2",
+    "unstated-next": "^1.1.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

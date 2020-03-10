@@ -6,14 +6,13 @@ import React, {
   useState
 } from 'react';
 import { Router, RouteComponentProps, MatchProps, Link } from '@reach/router';
+import AppLayout from '@components/AppLayout';
 
-import NavLink from '@components/Common/NavLink';
-
-const Home = lazy(() => import('../pages/Home'));
-const Login = lazy(() => import('../pages/Login'));
-const Pwd = lazy(() => import('../pages/Pwd'));
-const Vc = lazy(() => import('../pages/Vc'));
-const Signup = lazy(() => import('../pages/Signup'));
+const Home = lazy(() => import('../views/Home'));
+const Login = lazy(() => import('../views/Login'));
+const Pwd = lazy(() => import('../views/Pwd'));
+const Vc = lazy(() => import('../views/Vc'));
+const Signup = lazy(() => import('../views/Signup'));
 
 interface Iprops extends RouteComponentProps {
   children: ReactNode;
@@ -26,19 +25,6 @@ const auth = {
     auth.permission = true;
   }
 };
-
-const App = ({ children }: Iprops) => (
-  <div>
-    <nav>
-      <NavLink to="/" exact={true}>
-        home
-      </NavLink>
-      <NavLink to="/login">login</NavLink>
-      <NavLink to="/signup">signup</NavLink>
-    </nav>
-    <div>{children}</div>
-  </div>
-);
 
 const Auth = (props: {
   path: string;
@@ -72,19 +58,32 @@ const Auth = (props: {
     // }
   }
 };
-export default function router({}: Props): ReactElement {
+export default function router({ }: Props): ReactElement {
+  
   return (
-    <Suspense fallback={'...loading'}>
-      <Router>
-        <App path="/">
-          <Home path="/" />
-          <Login path="login">
-            <Pwd path="/" />
-            <Auth path="vc" needAuth render={Vc} />
-          </Login>
-          <Signup path="signup" />
-        </App>
-      </Router>
-    </Suspense>
+    <div>
+
+    </div>
+    // <Suspense fallback={'...loading'}>
+    //   <Router>
+    //     <AppLayout>
+          
+    //     </AppLayout>
+    //   </Router>
+    // </Suspense>
   );
+  // return (
+  //   <Suspense fallback={'...loading'}>
+  //     <Router>
+  //       <App path="/">
+  //         <Home path="/" />
+  //         <Login path="login">
+  //           <Pwd path="/" />
+  //           <Auth path="vc" needAuth render={Vc} />
+  //         </Login>
+  //         <Signup path="signup" />
+  //       </App>
+  //     </Router>
+  //   </Suspense>
+  // );
 }
