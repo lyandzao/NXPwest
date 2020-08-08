@@ -1,0 +1,70 @@
+@import '@/styles/global.img.scss';
+
+.container {
+  width: 332px;
+  height: 378px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20px 0px rgba(16, 93, 179, 0.22);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform .2s ease-in;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.02);
+    transition: transform .2s ease-in;
+  }
+  .logo {
+    display: block;
+    width: 180px;
+    height: 115px;
+    background-size: 118px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .locationLogo {
+    background-image: url($locationLogo);
+    @extend .logo;
+    background-size: 70px 86px;
+  }
+
+  .volunteersLogo {
+    background-image: url($volunteersLogo);
+    @extend .logo;
+    background-size: 180px 113px;
+    background-position: 15px;
+  }
+
+  .accommodationLogo {
+    background-image: url($accommodationLogo);
+    @extend .logo;
+    background-size: 89px 78px;
+  }
+
+  span {
+    display: block;
+    font-family: heiti;
+  }
+
+  .title1 {
+    font-size: 30px;
+    color: rgba(99, 172, 225, 1);
+    line-height: 43px;
+  }
+
+  .title2 {
+    font-size: 24px;
+    color: rgba(184, 218, 243, 1);
+    line-height: 43px;
+  }
+
+  .detail {
+    font-family: heiti;
+    font-size:18px;
+    color:rgba(255, 179, 1, 1);
+    line-height:36px;
+    cursor: pointer;
+  }
+}

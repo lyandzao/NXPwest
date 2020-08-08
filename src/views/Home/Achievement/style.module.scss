@@ -1,0 +1,46 @@
+@import '@/styles/global.img.scss';
+@import '@/styles/global.size.scss';
+
+.container {
+  // background-color: #4887c4;
+}
+
+.content {
+  margin: 0 auto;
+  background: url($teamBg) no-repeat;
+  width: $pageWidth;
+  height: 708px;
+  background-position: 0 -55px;
+  background-size: $pageWidth 768px;
+
+  .header {
+    padding: 61px 0 44px 0;
+  }
+
+  .infoList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>div {
+      margin-bottom: 20px;
+    }
+  }
+
+  .btn {
+    width: 161px;
+    height: 48px;
+    background: linear-gradient(105deg, rgba(113, 171, 221, 0.33), rgba(68, 157, 234, 0.33), rgba(57, 125, 220, 0.33), rgba(57, 130, 224, 0.33));
+    box-shadow: 0px 14px 15px 0px rgba(69, 158, 234, 0.5);
+    background-color: rgba($color: #e0ecfa, $alpha: 0.47);
+    // opacity:0.47;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: heiti;
+    font-weight: bold;
+    color: rgba(255, 179, 1, 1);
+    margin-left: 370px;
+  }
+}

@@ -1,0 +1,70 @@
+@import '@/styles/global.img.scss';
+@import '@/styles/global.size.scss';
+
+.container {
+  // background-color: #4887c4;
+}
+
+.content {
+  margin: 0 auto;
+  background: url($teamBg) no-repeat;
+  width: $pageWidth;
+  height: 653px;
+  background-position: 0 -55px;
+  background-size: $pageWidth 708px;
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      width: 550px;
+      font-size: 48px;
+      font-family: lianghei;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 68px;
+      margin-top: 170px;
+    }
+
+    h3 {
+      height: 28px;
+      font-size: 30px;
+      font-family: lianghei;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 14px;
+    }
+
+    div {
+      height: 17px;
+      font-size: 18px;
+      font-family: heiti;
+      color: rgba(255, 179, 1, 1);
+      line-height: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .msg {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 360px;
+    .time {
+      width: 288px;
+      height: 24px;
+      font-size: 24px;
+      font-family: heiti;
+      color: rgba(255, 255, 255, 1);
+      line-height: 14px;
+    }
+
+    .location {
+      @extend .time;
+    }
+  }
+}

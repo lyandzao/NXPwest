@@ -1,0 +1,63 @@
+@import '@/styles/global.img.scss';
+
+.modal {}
+
+.windowContainer {
+  width: 1126px;
+  height: 509px;
+  margin: 100px auto 0;
+  position: relative;
+
+  .window {
+    // background: url($loginModalBac) no-repeat center;
+    width: 787px;
+    height: 459px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    .children {
+      width: 546px;
+      // background: url($npxLogo) no-repeat center;
+      // background-size: 80px 30px;
+      // background-position-y: 0;
+      // padding-top: 47px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    background: url($modalX) no-repeat center;
+    width: 47px;
+    height: 47px;
+    top: 20px;
+    right: 0;
+
+    &:hover {
+      filter: brightness(.7);
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(40, 54, 73, 0.702);
+}
+
+.bac {
+  background-color: rgba(40, 54, 73, 0.702);
+}
+

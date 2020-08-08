@@ -3,28 +3,48 @@ const {
   overrideDevServer,
   fixBabelImports,
   setWebpackTarget,
-  addWebpackAlias
+  addWebpackAlias,
+  disableEsLint
 } = require('customize-cra');
 const path = require('path');
+const { addReactRefresh } = require("customize-cra-react-refresh")
 
 const appPath = target => path.resolve(__dirname, target);
 
+const devServerConfig = () => config => {
+  return {
+    ...config,
+    compress: true,
+    proxy: {
+      '/nxpwest/**': {
+        target: 'http://www.ljhhhx.com:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/nxpwest': '/nxpwest'
+        }
+      }
+    }
+  }
+}
 
 module.exports = {
   webpack: override(
     addWebpackAlias({
       '@': appPath('src'),
-      '@components': appPath('src/components'),
-      '@assets': appPath('src/assets'),
-      '@layouts': appPath('src/layouts'),
       '@store': appPath('src/store'),
-      '@actions': appPath('src/store/actions'),
-      '@apis': appPath('src/apis'),
-      '@router': appPath('src/router'),
-      '@pages': appPath('src/pages'),
-      '@utils': appPath('src/utils'),
-      '@hooks': appPath('src/hooks')
-    })
+      '@apis': appPath('src/services/apis'),
+      '@hooks': appPath('src/hooks'),
+    }),
+    addReactRefresh(),
+    fixBabelImports('import', {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: 'css',
+    }),
+    disableEsLint()
+  ),
+  devServer: overrideDevServer(
+    devServerConfig()
   ),
   paths: (paths, env) => {
     return paths;

@@ -1,43 +1,58 @@
-import React, { lazy, Children } from 'react';
+import { lazy } from 'react'
+import { Iroute } from '@/components/commons/RenderRoutes'
 
-const AppLayout = lazy(() => import('../components/AppLayout'));
-const Home = lazy(() => import('../views/Home'));
-const Volunteer = lazy(() => import('../views/Volunteer'));
-const Login = lazy(() => import('../views/Login'));
-const Signup = lazy(() => import('../views/Signup'));
+import BasicLayout from '@/layouts/BasicLayout'
+import BlankLayout from '@/layouts/BlankLayout'
 
-interface Iroute {
-  path: string;
-  requireAuth?: boolean;
-  component: any;
-  children?: Iroute[];
-}
-
-const routerConfig: Iroute[] = [
+const routerConfig:Iroute[] = [
   {
     path: '/',
-    requireAuth: false,
-    component: Home,
-    children: [
+    component: BasicLayout,
+    childRoutes: [
       {
         path: '/',
-        requireAuth: false,
-        component: Home
-      }
+        exact: true,
+        name: '首页',
+        component: lazy(()=>import('@/views/Home'))
+      },
+      {
+        path: '/competition',
+        name: '比赛安排',
+        requireAuth:true,
+        component:lazy(()=>import('@/views/Competition'))
+      },
+      {
+        path: '/volunteer',
+        name: '志愿者',
+        requireAuth:true,
+        component:lazy(()=>import('@/views/Volunteer'))
+      },
+      {
+        path: '/accommodation',
+        name: '食宿安排',
+        requireAuth:true,
+        component:lazy(()=>import('@/views/Accommodation'))
+      },
+      {
+        path: '/center',
+        name: '个人中心',
+        requireAuth:true,
+        component:lazy(()=>import('@/views/Center'))
+      },
+      {
+        path: 'exception',
+        name: '异常页面',
+        childRoutes: [
+          {
+            path: '/exception/404',
+            name: '404',
+            component:lazy(()=>import('@/views/Exception/404'))
+          }
+        ]
+      },
+      {path:'*',exact:true,redirect:'/exception/404'}
     ]
-  }
-];
+   }
+ ]
 
-const Route = (props: Iroute) => {
-  return (
-    <div>
-      {props.children
-        ? props.children.forEach(childrenRoute => <Route {...childrenRoute} />)
-        : <props.component/>}
-    </div>
-  );
-};
-
-export const renderRoutes = (routeConfig: Iroute[]) => {};
-
-export default routerConfig;
+export default routerConfig

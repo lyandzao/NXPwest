@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tt {
+  font-size: 18px;
+  color: #63ACE1FF;
+  font-weight: bold;
+  line-height: 30px;
+  font-family: heiti;
+}
+
+.img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;;
+}

@@ -1,0 +1,25 @@
+.container {
+  margin: 100px 0;
+}
+
+.item {
+  font-size: 24px;
+  font-family: heiti;
+  font-weight: bold;
+  color: rgba(99, 172, 225, 1);
+  line-height: 46px;
+  display: flex;
+
+  .itemTt {
+    width: 100px;
+    text-align-last: justify;
+
+  }
+
+  .itemInfo {
+    &::before {
+      content: ':';
+      padding: 0 15px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.container {}
+
+.comp {
+  display: flex;
+}
+
+.phone {
+  margin-top: 10px;
+}
+
+.lots {
+  text-align: center; 
+  line-height: 50px;
+  font-size: 18px;
+  span{
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+.btnWrapper{
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+.container {
+
+  .normal {
+    display: block;
+    width: 100%;
+    font-size: 36px;
+    font-family: lianghei;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    line-height: 46px;
+    text-align: center;
+  }
+
+  .title1 {
+    @extend .normal;
+
+  }
+
+  .title2 {
+    @extend .normal;
+    color: #283649;
+  }
+}

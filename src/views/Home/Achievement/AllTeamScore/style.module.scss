@@ -1,0 +1,41 @@
+  .btn {
+    width: 161px;
+    height: 48px;
+    background: linear-gradient(105deg, rgba(113, 171, 221, 0.33), rgba(68, 157, 234, 0.33), rgba(57, 125, 220, 0.33), rgba(57, 130, 224, 0.33));
+    box-shadow: 0px 14px 15px 0px rgba(69, 158, 234, 0.5);
+    background-color: rgba($color: #e0ecfa, $alpha: 0.47);
+    // opacity:0.47;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: heiti;
+    font-weight: bold;
+    color: rgba(255, 179, 1, 1);
+    margin-left: 370px;
+  }
+
+  .container {
+    // outline: 1px solid;
+    position: relative;
+    // display: flex;
+    height: 500px;
+  }
+
+  .btnWrapper {
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+  }
+
+  .content {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .select{
+      margin-bottom: 10px;
+    }
+  }
+
+  .sideBar {}

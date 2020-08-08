@@ -1,0 +1,35 @@
+@import '@/styles/global.img.scss';
+
+.container {
+  position: relative;
+  background: url($npxLogo) no-repeat center;
+  background-size: 80px 30px;
+  background-position-y: 0;
+  padding-top: 40px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &>div {
+    margin-top: 15px;
+  }
+}
+
+.btn {
+  margin-top: 22px;
+}
+
+.jump {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  cursor: pointer;
+  color: #63ace1;
+  font-family: heiti;
+  font-size: 14px;
+
+  &:hover {
+    color: #3193da;
+  }
+}

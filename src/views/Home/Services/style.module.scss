@@ -1,0 +1,22 @@
+@import '@/styles/global.img.scss';
+@import '@/styles/global.size.scss';
+
+.container {
+  // background-color: #4887c4;
+}
+
+.content {
+  margin: 0 auto;
+  width: $pageWidth;
+  height: 708px;
+  .header{
+    padding: 40px 0;
+  }
+  .blockWrapper{
+    display: flex;
+    justify-content: center;
+    &>div:nth-child(2){
+      margin: 0 52px;
+    }
+  }
+}

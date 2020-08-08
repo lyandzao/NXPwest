@@ -1,0 +1,50 @@
+@import '@/styles/global.img.scss';
+
+.container {
+  position: absolute;
+  right: 110px;
+  background: url($npxLogo) no-repeat center;
+  background-size: 80px 30px;
+  background-position-y: 0;
+  padding-top: 47px;
+  width: 197px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &>div {
+    margin-top: 20px;
+  }
+}
+
+.btn {
+  margin-top: 44px;
+}
+
+.err {
+  position: absolute;
+  top: 140px;
+  line-height: 25px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: heiti;
+  font-weight: bold;
+  color: rgba(251, 141, 123, 1);
+}
+
+.bar {
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  display: flex;
+  justify-content: space-between;
+  &>div {
+    cursor: pointer;
+    color: #63ace1;
+    font-family: heiti;
+    font-size: 14px;
+    &:hover{
+      color: #3193da;
+    }
+  }
+}

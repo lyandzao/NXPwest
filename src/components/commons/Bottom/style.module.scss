@@ -1,0 +1,88 @@
+@import '@/styles/global.img.scss';
+@import '@/styles/global.size.scss';
+
+.wrapper {
+  width: 100%;
+  height: 384px;
+  background: rgba(57, 64, 69, 1);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding-top: 50px;
+  // max-width: $pageWidth;
+
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 62px;
+  }
+
+  .contact {
+    // width: 120px;
+    text-align: center;
+    height: 30px;
+    font-size: 30px;
+    font-family: heiti;
+    font-weight: bold;
+    color: rgba(99, 172, 225, 1);
+    width: 80%;
+    width: 900px;
+    margin: 0 auto;
+    line-height: 30px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 35%;
+      height: 2px;
+      background: rgba(99, 172, 225, 1);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  .logo {
+    display: block;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+
+    &:hover {
+      transform: scale(1.01);
+      transition: transform .1s ease-in;
+    }
+
+    width: 150px;
+    height: 150px;
+    margin: 0 30px;
+  }
+
+  .nxpLogo {
+    @extend .logo;
+    width: 200px;
+    background: url($headerLogo) no-repeat center;
+  }
+
+  .QRLogo {
+    @extend .logo;
+    background: url($QRcode) no-repeat center;
+  }
+
+  .cquptLogo {
+    @extend .logo;
+    background: url($cquptLogo) no-repeat center;
+  }
+}
